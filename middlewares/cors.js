@@ -4,7 +4,7 @@ export const corsMiddleware = () => {
     return cors({
         origin: (origin, callback) => {
           // Para permitir el acceso a la API desde el frontend en modo desarrollo
-          const whitelist = ["http://localhost:3000"];
+          const whitelist = ["http://localhost:3000", "https://todo-fullstack-gzvzl66d6-devkaliper.vercel.app/"];
           if (!origin || whitelist.some((domain) => domain === origin)) {
             callback(null, true);
           } else {
