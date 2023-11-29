@@ -1,12 +1,12 @@
 import express, { json } from "express";
 import { listRouter } from "./router/list.js";
-import { corsMiddleware } from "./middlewares/cors.js";
+import cors from "cors";
 const app = express();
 
 const PORT = process.env.PORT ?? 3001;
 
 app.disable("x-powered-by");
-app.use(corsMiddleware());
+app.use(cors());
 app.use(json());
 
 // Rutas de la API REST de listas
